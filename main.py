@@ -11,7 +11,10 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 # Setup logging
-logging.basicConfig(level=logging.DEBUG, format="%(asctime)s [%(levelname)s] %(message)s")
+if os.getenv("ENV") == "production":
+    logging.basicConfig(level=logging.WARNING, format="%(asctime)s [%(levelname)s] %(message)s")
+else:
+    logging.basicConfig(level=logging.DEBUG, format="%(asctime)s [%(levelname)s] %(message)s")
 
 # Load environment variables
 load_dotenv()
