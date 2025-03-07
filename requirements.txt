@@ -1,0 +1,6 @@
+streamlit>=1.24.0
+subliminal>=2.1.0
+dogpile.cache>=1.1.8
+babelfish
+python-dotenv
+openai
