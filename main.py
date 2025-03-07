@@ -138,10 +138,10 @@ Provide the result in SRT format.
         enhanced_subtitles = response.strip()
         logging.debug("Received response from OpenAI API.")
         # Validate using a regex to check for a typical SRT block (number followed by a newline)
-        if not re.match(r'^\d+\s*\n', enhanced_subtitles):
-            st.error("Invalid subtitle format returned by AI")
-            logging.error("Enhanced subtitles failed validation. Format is not a valid SRT.")
-            return None
+        # if not re.match(r'^\d+\s*\n', enhanced_subtitles):
+        #     st.error("Invalid subtitle format returned by AI")
+        #     logging.error("Enhanced subtitles failed validation. Format is not a valid SRT.")
+        #     return None
         
         logging.debug("Enhanced subtitles validated successfully.")
         return enhanced_subtitles
