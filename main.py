@@ -135,7 +135,10 @@ Provide the result in SRT format.
             temperature=0.3,
             max_tokens=3000
         )
+
+        # enhanced_subtitles = response.choices[0].message.content.strip()
         enhanced_subtitles = response.strip()
+
         logging.debug("Received response from OpenAI API.")
         # Validate using a regex to check for a typical SRT block (number followed by a newline)
         # if not re.match(r'^\d+\s*\n', enhanced_subtitles):
@@ -144,6 +147,7 @@ Provide the result in SRT format.
         #     return None
         
         logging.debug("Enhanced subtitles validated successfully.")
+        print(enhanced_subtitles)
         return enhanced_subtitles
     except Exception as e:
         st.error(f"AI Enhancement Error: {str(e)}")
